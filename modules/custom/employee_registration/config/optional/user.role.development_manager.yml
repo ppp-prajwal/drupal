@@ -1,7 +1,10 @@
 uuid: 24311c23-3717-4b80-92b7-81511a755dc3
 langcode: en
 status: true
-dependencies: {  }
+dependencies:
+  enforced:
+    module:
+      - employee_registration
 id: development_manager
 label: 'Development Manager'
 weight: 4
