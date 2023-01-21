@@ -67,6 +67,7 @@ information, see
 - Create and enable a employee_registration module.
 - Create a form with fields Employee Name, One Plus, Amount of Kids, Amount of Vegeterians, Email Address.
 - Validate the form using function validateForm in \Drupal\employee_registration\Form\RegistrationForm.
+- Create content type registration in \Drupal\employee_registration\config\optional.
 
 
 ## Bugfixes
