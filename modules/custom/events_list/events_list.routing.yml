@@ -1,0 +1,6 @@
+events_list.listPublishedEvents:
+  path: '/list-published-events'
+  defaults:
+    _controller: '\Drupal\events_list\Controller\EventsController::listPublishedEvents'
+  requirements:
+    _access: 'TRUE'

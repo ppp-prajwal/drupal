@@ -1,0 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.card-parent{
+  text-decoration: none;
+}
+
+.event {
+  border: solid 1px #D5D5D5;
+}
+
+.event .card-img {
+  height: 250px;
+  transition: transform .2s;
+}
+
+.event .card-img:hover {
+  transform: scale(1.2);
+}
+
+.event .card-text {
+  border-top: solid 1px #D5D5D5;
+  padding: 10px;
+}
+
+.event .card-text .card-title, 
+.event .card-text p,
+.event .card-text .card-bottom
+{
+  margin: 5px;
+  color: #000;
+}
+
+.event .card-text .footer{
+  margin: 5px;
+}
+
+.event .card-text .footer .checked{
+  color: #ffa500;
+}
+
+.event .card-text .footer .unchecked{
+  color: #D5D5D5;
+}
