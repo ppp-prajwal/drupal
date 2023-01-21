@@ -1,0 +1,14 @@
+uuid: 59be6a25-cc1a-4c29-a889-eded481540ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.development_manager
+  module:
+    - user
+id: user_remove_role_action.development_manager
+label: 'Remove the Development Manager role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: development_manager
