@@ -1,0 +1,20 @@
+uuid: 3041276e-042e-414c-8c0f-26e9cc7d5abd
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_amount_of_vegeterians
+field_name: field_amount_of_vegeterians
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

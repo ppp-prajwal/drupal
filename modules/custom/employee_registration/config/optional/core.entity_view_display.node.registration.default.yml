@@ -1,0 +1,56 @@
+uuid: 39253192-e64a-4e7b-a5a7-d847324f878e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.registration.field_amount_of_kids
+    - field.field.node.registration.field_amount_of_vegeterians
+    - field.field.node.registration.field_email_address
+    - field.field.node.registration.field_one_plus
+    - node.type.registration
+  module:
+    - user
+id: node.registration.default
+targetEntityType: node
+bundle: registration
+mode: default
+content:
+  field_amount_of_kids:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 102
+    region: content
+  field_amount_of_vegeterians:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 103
+    region: content
+  field_email_address:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 104
+    region: content
+  field_one_plus:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
