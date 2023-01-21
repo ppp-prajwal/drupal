@@ -49,7 +49,7 @@ information, see
 
 - Created and enabled a events_list module.
 - Created content type event.
-- Created routing file /events/events.routing.yml to route a COntroller.
+- Created routing file /events/events.routing.yml to route a Controller.
 - Created controller /events/src/Controller/EventsController.php to extract all nodes of event content type in $data[] and returned #theme and #items($data[]).
 
 ## Maintainers
