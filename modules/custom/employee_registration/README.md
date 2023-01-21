@@ -69,6 +69,8 @@ information, see
 - Validate the form using function validateForm in \Drupal\employee_registration\Form\RegistrationForm.
 - Create content type registration in \Drupal\employee_registration\config\optional.
 - Create a new node on submit of registration form.
+- Create a block registration_count Drupal\employee_registration\src\Plugin\Block\RegistrationCount.php
+- Added config Drupal\employee_registration\config\optional\block.block.registrationcount.yml to place block at every page.
 
 
 ## Bugfixes
