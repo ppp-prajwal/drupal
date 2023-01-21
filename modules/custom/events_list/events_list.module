@@ -1,0 +1,29 @@
+<?php
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function events_list_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the events_list module.
+    case 'help.page.events_list':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module to display all events on a page from content type named as event with fields name, description, place, date, image and star rating.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+  function events_list_theme() {
+    return [
+      'list_published_events'=>[
+        'variables'=>[
+          'items'=>[],
+        ],
+      ],
+    ];
+  }
+  

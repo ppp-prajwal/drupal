@@ -1,0 +1,21 @@
+uuid: 47ec0303-5cbc-42ad-b019-3fd5b2b4f2d8
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_rating
+    - node.type.event
+  module:
+    - options
+id: node.event.field_rating
+field_name: field_rating
+entity_type: node
+bundle: event
+label: Rating
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_integer

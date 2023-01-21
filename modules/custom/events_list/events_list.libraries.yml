@@ -1,0 +1,5 @@
+events_list.list_published_events:
+  css:
+    theme:
+      css/list-published-events.css: {}
+      'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css': { type: external, minified: true }
