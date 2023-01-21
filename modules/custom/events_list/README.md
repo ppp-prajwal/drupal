@@ -39,7 +39,7 @@ information, see
 
 ## Functionality
 
-- All published events are visible on /list-events.
+- All published events are visible on /list-published-events.
 - Each event is displayed in card layout with 3 card in a row and maximum number of rows as much as events are present in content type event.
 - Image popout on hover event image.
 - Ability to redirect to event detail page from event list page.
@@ -49,7 +49,8 @@ information, see
 
 - Created and enabled a events_list module.
 - Created content type event.
-
+- Created routing file /events/events.routing.yml to route a COntroller.
+- Created controller /events/src/Controller/EventsController.php to extract all nodes of event content type in $data[] and returned #theme and #items($data[]).
 
 ## Maintainers
 
