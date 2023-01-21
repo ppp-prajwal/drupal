@@ -17,6 +17,7 @@ Submit bug reports and feature suggestions, or track changes in the
 - Configuration
 - Functionality
 - Approach
+- Bugfixes
 - Maintainers
 
 
@@ -58,6 +59,11 @@ information, see
 - Attached library events.list_published_events to EventsController using #attached keyword.
 - Added style to contoller using list-published-events.css file.
 - Created plugin /events/src/Plugin/Block/ListPublishedEventsBlock.php to render controller as a block.
+
+
+## Bugfixes
+
+- Resolved error entity already exists on reinstalling events_list module.
 
 
 ## Maintainers
