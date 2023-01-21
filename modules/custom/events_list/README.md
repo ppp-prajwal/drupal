@@ -18,6 +18,7 @@ Submit bug reports and feature suggestions, or track changes in the
 - Functionality
 - Approach
 - Bugfixes
+- Enhancements
 - Maintainers
 
 
@@ -64,6 +65,10 @@ information, see
 ## Bugfixes
 
 - Resolved error entity already exists on reinstalling events_list module.
+
+## Enhancements
+
+- Used dependency injection in events_list module.
 
 
 ## Maintainers
