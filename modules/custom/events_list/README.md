@@ -44,6 +44,7 @@ information, see
 - Image popout on hover event image.
 - Ability to redirect to event detail page from event list page.
 
+
 ## Approach
 
 - Created and enabled a events_list module.
@@ -56,6 +57,8 @@ information, see
 - Created library events.list_published_events in events/events.libraries.yml to add css list-published-events.css and font-awesome library for star rating.
 - Attached library events.list_published_events to EventsController using #attached keyword.
 - Added style to contoller using list-published-events.css file.
+- Created plugin /events/src/Plugin/Block/ListPublishedEventsBlock.php to render controller as a block.
+
 
 ## Maintainers
 
