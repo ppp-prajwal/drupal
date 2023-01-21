@@ -7,6 +7,7 @@ namespace Drupal\employee_registration\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\node\Entity\Node;
 
 class RegistrationForm extends FormBase {
   /**
@@ -90,5 +91,15 @@ class RegistrationForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $node = Node::create(['type' => 'registration']);
+    $node->uid = 1;
+    $node->promote = 0;
+    $node->sticky = 0;
+    $node->title = $form_state->getValue('employee_name');
+    $node->field_one_plus = $form_state->getValue('one_plus');
+    $node->field_amount_of_kids = $form_state->getValue('amount_of_kids');
+    $node->field_amount_of_vegeterians = $form_state->getValue('amount_of_vegeterians');
+    $node->field_email_address = $form_state->getValue('email_address');
+    $node->save();
   }
 }
