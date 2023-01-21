@@ -56,15 +56,16 @@ information, see
 
 ## Configuration
 
-- Emplyees can register for an upcoming events.
-
 
 ## Functionality
+
+- Emplyees can register for an upcoming events.
 
 
 ## Approach
 
-- Created and enabled a events_list module.
+- Create and enable a employee_registration module.
+- Create a form with fields Employee Name, One Plus, Amount of Kids, Amount of Vegeterians, Email Address.
 
 
 ## Bugfixes

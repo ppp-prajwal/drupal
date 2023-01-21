@@ -1,0 +1,7 @@
+employee_registration.registration:
+  path: '/registration'
+  defaults:
+    _title: 'Registration Form'
+    _form: '\Drupal\employee_registration\Form\RegistrationForm'
+  requirements:
+    _permission: 'access content'
