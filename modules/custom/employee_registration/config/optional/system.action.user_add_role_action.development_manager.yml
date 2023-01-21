@@ -1,0 +1,14 @@
+uuid: e3ca517f-e945-4665-a613-69d1c13590dc
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.development_manager
+  module:
+    - user
+id: user_add_role_action.development_manager
+label: 'Add the Development Manager role to the selected user(s)'
+type: user
+plugin: user_add_role_action
+configuration:
+  rid: development_manager
