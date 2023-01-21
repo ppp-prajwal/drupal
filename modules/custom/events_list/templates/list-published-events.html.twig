@@ -1,0 +1,31 @@
+<div class = 'row'>
+  {% for item in items %}
+  <div class = 'column'>
+    <a href='{{ item.node_url }}' class='card-parent'>
+      <div class='card event'>
+        <img src='{{ item.image_url }}' class='card-img' alt='{{ item.image_alt }}'></img>
+        <div class='card-text'>
+          <h5 class='card-title'>{{ item.title }}</h5>
+          {{ item.body |raw }}
+          <div class='card-bottom'>
+            <small><b>
+            {{ item.place }}
+            <br>
+            {{ item.date }}
+            </b></small>
+          </div>
+          <div class='footer'>
+          {% for i in 1..5 %}
+            {% if i <= item.rating %}
+              <span class='fa fa-star checked'></span>
+            {% elseif i > item.rating %}
+            <span class='fa fa-star unchecked'></span>
+            {% endif %}
+          {% endfor %}
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+  {% endfor %}
+</div>

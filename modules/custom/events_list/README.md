@@ -43,7 +43,12 @@ information, see
 - Each event is displayed in card layout with 3 card in a row and maximum number of rows as much as events are present in content type event.
 - Image popout on hover event image.
 - Ability to redirect to event detail page from event list page.
-
+- Created module file /events/events.module to parse the #theme as a twig template and #items as a variables using hook_theme().
+- Created template file /events/templates/list-published-events.html.twig and consumed variables using .operator on items.
+- Created css file /events/css/list-published-events.css to style /list-published-events page.
+- Created library events.list_published_events in events/events.libraries.yml to add css list-published-events.css and font-awesome library for star rating.
+- Attached library events.list_published_events to EventsController using #attached keyword.
+- Added style to contoller using list-published-events.css file.
 
 ## Approach
 

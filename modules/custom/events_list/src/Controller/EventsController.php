@@ -44,7 +44,7 @@ class EventsController extends ControllerBase {
     }
 
     $build[] = [
-      '#theme'=>'listevents',
+      '#theme'=>'list_published_events',
       '#items'=>$data,
       '#cache'=>[
         'max-age'=>0
