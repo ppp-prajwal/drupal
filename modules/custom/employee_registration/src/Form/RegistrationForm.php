@@ -60,6 +60,35 @@ class RegistrationForm extends FormBase {
   /**
    * {@inheritdoc}
    */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $amount_of_vegeterians = $form_state->getValue('amount_of_vegeterians');
+    $amount_of_kids = $form_state->getValue('amount_of_kids');
+    if($form_state->getValue('one_plus') == "Yes") {
+      $one_plus = 1;
+    }
+    else $one_plus = 0;
+    $total_people = $amount_of_kids + $one_plus + 1;
+
+    if(!preg_match('/^[a-zA-Z\'\-]+$/', $form_state->getValue('employee_name'))) {
+      $form_state->setErrorByName('employee_name', $this->t('Only alphabets are allowed.'));
+    }
+    elseif(!preg_match('/^[0-9]+$/', $form_state->getValue('amount_of_kids'))) {
+      $form_state->setErrorByName('amount_of_kids', $this->t('Only numbers are allowed.'));
+    }
+    elseif(!preg_match('/^[0-9]+$/', $form_state->getValue('amount_of_vegeterians'))) {
+      $form_state->setErrorByName('amount_of_vegeterians', $this->t('Only numbers are allowed.'));
+    }
+    elseif(!preg_match('/^.{2,40}\@.{2,50}\..{2,5}\z/', $form_state->getValue('email_address'))) {
+      $form_state->setErrorByName('email_address', $this->t('Please enter a valid email address.'));
+    }
+    if($amount_of_vegeterians > $total_people) {
+      $form_state->setErrorByName('amount_of_vegeterians', $this->t('Amount of vegeterians cannot be greater than total amount of people.'));
+    }
+  }
+
+  /**
+   * {@inheritdoc}
+   */
   public function submitForm(array &$form, FormStateInterface $form_state) {
   }
 }
