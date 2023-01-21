@@ -48,6 +48,7 @@ information, see
 ## Approach
 
 - Created and enabled a events_list module.
+- Created content type event.
 
 
 ## Maintainers
