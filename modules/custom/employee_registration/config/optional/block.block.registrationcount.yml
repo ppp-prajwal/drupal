@@ -1,0 +1,20 @@
+uuid: 986610d7-bd39-4a50-9a98-784312cfc971
+langcode: en
+status: true
+dependencies:
+  module:
+    - employee_registration
+  theme:
+    - olivero
+id: registrationcount
+theme: olivero
+region: content
+weight: 0
+provider: null
+plugin: registration_count
+settings:
+  id: registration_count
+  label: 'Registration Count'
+  label_display: visible
+  provider: employee_registration
+visibility: {  }
