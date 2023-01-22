@@ -1,0 +1,29 @@
+<?php
+use Drupal\Core\Database\Database;
+
+/**
+ * Implements hook_schema().
+ */
+function employee_registration_schema(){
+  $schema['department'] = [
+    'description' => 'Table to store department human and machine readdable names',
+    'fields' => [
+      'department_name' => [
+        'description' => 'Department Name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+      'department_code_name' => [
+        'description' => 'Department Code Name',
+        'type' => 'varchar',
+        'length' => 255,
+        'not null' => TRUE,
+        'default' => '',
+      ],
+    ],
+    'primary key' => array('department_code_name'),
+  ];
+  return $schema;
+}
