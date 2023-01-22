@@ -56,6 +56,9 @@ information, see
 
 ## Configuration
 
+- Content Type
+- Roles
+- Permissions
 
 ## Functionality
 
@@ -84,6 +87,8 @@ information, see
 
 
 ## Bugfixes
+
+- Accept space in field employee name in custom registration form.
 
 
 ## Enhancements
