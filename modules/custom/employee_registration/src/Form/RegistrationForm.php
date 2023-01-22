@@ -8,6 +8,8 @@ namespace Drupal\employee_registration\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\Core\Database\Database;
 
 class RegistrationForm extends FormBase {
   /**
@@ -55,7 +57,24 @@ class RegistrationForm extends FormBase {
       '#value' => $this->t('Save'),
       '#button_type' => 'primary',
     );
-    return $form;
+
+    $department = \Drupal::routeMatch()->getParameter('department');
+    $conn = Database::getConnection();
+    $result = $conn->select('department','d')->fields('d',['department_name','department_code_name'])->execute()->fetchAll(\PDO::FETCH_OBJ);
+    foreach($result as $row) {
+      if ($department == $row->department_code_name){
+        $department_check = 'TRUE';
+        break;
+      }
+      else $department_check = 'FALSE';
+    }
+
+    if($department_check == 'TRUE') {
+      return $form;
+    }
+    else return [
+      '#markup' => "<b>Please enter valid department code in form url.</b>",
+    ];
   }
 
   /**
