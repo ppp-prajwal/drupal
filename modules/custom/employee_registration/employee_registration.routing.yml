@@ -1,5 +1,5 @@
 employee_registration.registration:
-  path: '/registration'
+  path: '/registration/{department}'
   defaults:
     _title: 'Registration Form'
     _form: '\Drupal\employee_registration\Form\RegistrationForm'
