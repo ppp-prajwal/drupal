@@ -88,7 +88,7 @@ information, see
 
 ## Enhancements
 
-- Use dependency injection in employee registration module.
+- Use dependency injection in a module.
 
 ## Maintainers
 
