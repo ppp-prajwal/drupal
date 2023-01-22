@@ -1,0 +1,25 @@
+uuid: cd7c30e5-d4f7-4824-8966-b254f0aac62d
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_amount_of_vegeterians
+    - node.type.registration
+_core:
+  default_config_hash: 9HyjH9FJyi3vSebRla4UD3VPDPy4W_zbA74eqG35fhI
+id: node.registration.field_amount_of_vegeterians
+field_name: field_amount_of_vegeterians
+entity_type: node
+bundle: registration
+label: 'Amount of Vegeterians'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

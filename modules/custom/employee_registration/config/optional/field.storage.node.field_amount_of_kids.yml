@@ -1,0 +1,22 @@
+uuid: 8bfe2894-c8b4-4d41-a660-9cb40ffa75e0
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: Y9E0h-ZiisfL9Q9el5_HgxUvYRBzyLPQKNvx1x-T-o4
+id: node.field_amount_of_kids
+field_name: field_amount_of_kids
+entity_type: node
+type: integer
+settings:
+  unsigned: false
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
