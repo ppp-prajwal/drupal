@@ -1,4 +1,4 @@
-uuid: 59be6a25-cc1a-4c29-a889-eded481540ba
+uuid: b520cb1c-1996-4887-8c4a-98be6a69a483
 langcode: en
 status: true
 dependencies:
@@ -6,6 +6,8 @@ dependencies:
     - user.role.development_manager
   module:
     - user
+_core:
+  default_config_hash: R6Y5tpJkpzZas_66e-p2ma-AhFX_unWfoYNsV3pKSaQ
 id: user_remove_role_action.development_manager
 label: 'Remove the Development Manager role from the selected user(s)'
 type: user
