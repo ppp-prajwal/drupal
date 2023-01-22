@@ -89,6 +89,15 @@ class RegistrationForm extends FormBase {
     else $one_plus = 0;
     $total_people = $amount_of_kids + $one_plus + 1;
 
+    $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)->condition('status',1)->condition('type','registration')->execute();
+    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    foreach($nodes as $node) {
+      if($form_state->getValue('email_address') == $node->field_email_address->value) {
+        $duplicate_email_check = 'TRUE';
+      }
+      else $duplicate_email_check = 'FALSE';
+    }
+
     if(!preg_match('/^[a-zA-Z\'\-]+$/', $form_state->getValue('employee_name'))) {
       $form_state->setErrorByName('employee_name', $this->t('Only alphabets are allowed.'));
     }
@@ -101,8 +110,11 @@ class RegistrationForm extends FormBase {
     elseif(!preg_match('/^.{2,40}\@.{2,50}\..{2,5}\z/', $form_state->getValue('email_address'))) {
       $form_state->setErrorByName('email_address', $this->t('Please enter a valid email address.'));
     }
-    if($amount_of_vegeterians > $total_people) {
+    elseif($amount_of_vegeterians > $total_people) {
       $form_state->setErrorByName('amount_of_vegeterians', $this->t('Amount of vegeterians cannot be greater than total amount of people.'));
+    }
+    elseif($duplicate_email_check == 'TRUE'){
+      $form_state->setErrorByName('email_address', $this->t('Email address already exists.'));
     }
   }
 
@@ -120,5 +132,7 @@ class RegistrationForm extends FormBase {
     $node->field_amount_of_vegeterians = $form_state->getValue('amount_of_vegeterians');
     $node->field_email_address = $form_state->getValue('email_address');
     $node->save();
+
+    \Drupal::messenger()->addStatus(t('Employee registered successfully for an event.'));
   }
 }

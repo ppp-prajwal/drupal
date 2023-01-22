@@ -79,6 +79,7 @@ information, see
 - Add varaiable department to \Drupal\employee_registration\employee_registration.routing.yml
 - Check valid department name and display form \Drupal\employee_registration\src\Form\RegistrationForm.php
 - Create a field department name in registration content type and inserted department name from url parameter into a registration node.
+- Validation check on employee registration on registration form with already registered email address \Drupal\employee_registration\src\Form\RegistrationForm.php
 
 
 ## Bugfixes
