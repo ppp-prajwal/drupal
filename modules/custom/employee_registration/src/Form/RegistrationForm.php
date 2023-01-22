@@ -35,7 +35,7 @@ class RegistrationForm extends FormBase {
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityTypeManager;
+  protected $entityTypeManage;
 
   /**
    * The Messenger service.

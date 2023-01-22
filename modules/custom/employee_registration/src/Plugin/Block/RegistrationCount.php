@@ -22,7 +22,7 @@ class RegistrationCount extends BlockBase implements ContainerFactoryPluginInter
    *
    * @var \Drupal\Core\Entity\EntityTypeManagerInterface
    */
-  protected $entityTypeManager;
+  protected $entityTypeManage;
 
   /**
    * Constructs a RegistrationCount.
