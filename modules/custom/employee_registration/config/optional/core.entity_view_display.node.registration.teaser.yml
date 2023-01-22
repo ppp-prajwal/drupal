@@ -1,0 +1,32 @@
+uuid: f27769d1-b2ee-49ce-a2eb-43adf0c0327f
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser
+    - field.field.node.registration.field_amount_of_kids
+    - field.field.node.registration.field_amount_of_vegeterians
+    - field.field.node.registration.field_department_name
+    - field.field.node.registration.field_email_address
+    - field.field.node.registration.field_one_plus
+    - node.type.registration
+  module:
+    - user
+_core:
+  default_config_hash: tOZ8UPUO6nsYqsZ2JYC1TfQwbOL_2PEyXHuFe59lMG0
+id: node.registration.teaser
+targetEntityType: node
+bundle: registration
+mode: teaser
+content:
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden:
+  field_amount_of_kids: true
+  field_amount_of_vegeterians: true
+  field_department_name: true
+  field_email_address: true
+  field_one_plus: true

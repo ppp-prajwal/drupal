@@ -1,0 +1,21 @@
+uuid: b691f170-f521-4fcc-a88e-cefe26d28772
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_email_address
+    - node.type.registration
+_core:
+  default_config_hash: 9GJ7QUUP7USCXDDX7VkqO72sDJVp0M_UdcKcWrWR6lU
+id: node.registration.field_email_address
+field_name: field_email_address
+entity_type: node
+bundle: registration
+label: 'Email Address'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: email
