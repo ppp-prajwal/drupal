@@ -80,6 +80,7 @@ information, see
 - Check valid department name and display form \Drupal\employee_registration\src\Form\RegistrationForm.php
 - Create a field department name in registration content type and inserted department name from url parameter into a registration node.
 - Validation check on employee registration on registration form with already registered email address \Drupal\employee_registration\src\Form\RegistrationForm.php
+- Add roles department manager to AddDepartmentConfigForm route \Drupal\employee_registration\employee_registration.routing.yml to restrict accessibility to department managers only.
 
 
 ## Bugfixes

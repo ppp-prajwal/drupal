@@ -12,4 +12,5 @@ employee_registration.department:
     _title: 'Add Department Form'
     _form: '\Drupal\employee_registration\Form\AddDepartmentConfigForm'
   requirements:
-    _permission: 'administer site configuration'
+    _roles: development_manager
+    
