@@ -122,6 +122,16 @@ class RegistrationForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $department = \Drupal::routeMatch()->getParameter('department');
+    $conn = Database::getConnection();
+    $result = $conn->select('department','d')->fields('d',['department_name','department_code_name'])->execute()->fetchAll(\PDO::FETCH_OBJ);
+    foreach($result as $row) {
+      if ($department == $row->department_code_name){
+        $department_name = $row->department_name;
+        break;
+      }
+    }
+
     $node = Node::create(['type' => 'registration']);
     $node->uid = 1;
     $node->promote = 0;
@@ -131,6 +141,7 @@ class RegistrationForm extends FormBase {
     $node->field_amount_of_kids = $form_state->getValue('amount_of_kids');
     $node->field_amount_of_vegeterians = $form_state->getValue('amount_of_vegeterians');
     $node->field_email_address = $form_state->getValue('email_address');
+    $node->field_department_name = $department_name;
     $node->save();
 
     \Drupal::messenger()->addStatus(t('Employee details registered successfully for an event.'));
