@@ -160,7 +160,7 @@ class RegistrationForm extends FormBase {
       else $duplicate_email_check = 'FALSE';
     }
 
-    if(!preg_match('/^[a-zA-Z\'\-]+$/', $form_state->getValue('employee_name'))) {
+    if(!preg_match('/^[a-z A-Z\'\-]+$/', $form_state->getValue('employee_name'))) {
       $form_state->setErrorByName('employee_name', $this->t('Only alphabets are allowed.'));
     }
     elseif(!preg_match('/^[0-9]+$/', $form_state->getValue('amount_of_kids'))) {
