@@ -72,6 +72,7 @@ information, see
 - Create a block registration_count \Drupal\employee_registration\src\Plugin\Block\RegistrationCount.php
 - Added config Drupal\employee_registration\config\optional\block.block.registrationcount.yml to place block at every page.
 - Create role Development Manger \Drupal\employee_registration\config\optional\user.role.development_manager.yml
+- Create a permission “Manage event registrations” at \Drupal\employee_registration\employee_registration.permissions.yml and assigned role Development manager to it.
 
 
 ## Bugfixes

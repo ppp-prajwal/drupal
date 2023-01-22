@@ -2,11 +2,13 @@ uuid: 24311c23-3717-4b80-92b7-81511a755dc3
 langcode: en
 status: true
 dependencies:
-  enforced:
-    module:
-      - employee_registration
+  module:
+    - employee_registration
+_core:
+  default_config_hash: wmxMeCsSqXhjArGD9KgLdtEjf4d83wgJjLaBR88RQLs
 id: development_manager
 label: 'Development Manager'
 weight: 4
 is_admin: null
-permissions: {  }
+permissions:
+  - 'manage event registrations'
