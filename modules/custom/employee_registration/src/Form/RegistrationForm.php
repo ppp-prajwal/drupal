@@ -133,6 +133,6 @@ class RegistrationForm extends FormBase {
     $node->field_email_address = $form_state->getValue('email_address');
     $node->save();
 
-    \Drupal::messenger()->addStatus(t('Employee registered successfully for an event.'));
+    \Drupal::messenger()->addStatus(t('Employee details registered successfully for an event.'));
   }
 }
