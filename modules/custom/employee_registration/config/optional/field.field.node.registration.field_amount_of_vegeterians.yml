@@ -5,6 +5,8 @@ dependencies:
   config:
     - field.storage.node.field_amount_of_vegeterians
     - node.type.registration
+_core:
+  default_config_hash: 9HyjH9FJyi3vSebRla4UD3VPDPy4W_zbA74eqG35fhI
 id: node.registration.field_amount_of_vegeterians
 field_name: field_amount_of_vegeterians
 entity_type: node

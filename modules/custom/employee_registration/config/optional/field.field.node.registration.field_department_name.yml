@@ -1,17 +1,15 @@
-uuid: f186c090-b008-45cc-9dd1-339f5d5ebfab
+uuid: 89ab512e-8ce3-45ad-a1d8-140a9dbd06b7
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.node.field_one_plus
+    - field.storage.node.field_department_name
     - node.type.registration
-_core:
-  default_config_hash: cjCk-i68eQrgdoLKkfoRcX8z5dM5uwKY1sp7sTAHYwg
-id: node.registration.field_one_plus
-field_name: field_one_plus
+id: node.registration.field_department_name
+field_name: field_department_name
 entity_type: node
 bundle: registration
-label: 'One Plus'
+label: 'Department Name'
 description: ''
 required: false
 translatable: false

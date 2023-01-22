@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: '-PPgfLL3MQV1NHm9O3oCbFKwT-4fPXpCf_qcmUaBF8A'
 id: node.field_amount_of_vegeterians
 field_name: field_amount_of_vegeterians
 entity_type: node

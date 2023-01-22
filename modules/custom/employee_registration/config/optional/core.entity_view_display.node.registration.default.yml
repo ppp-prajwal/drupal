@@ -5,11 +5,14 @@ dependencies:
   config:
     - field.field.node.registration.field_amount_of_kids
     - field.field.node.registration.field_amount_of_vegeterians
+    - field.field.node.registration.field_department_name
     - field.field.node.registration.field_email_address
     - field.field.node.registration.field_one_plus
     - node.type.registration
   module:
     - user
+_core:
+  default_config_hash: o6cqnzDbOUJrpYHekq06Tf4tHOIbIcYVH61Rm3HrTQ4
 id: node.registration.default
 targetEntityType: node
 bundle: registration
@@ -32,6 +35,14 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     weight: 103
+    region: content
+  field_department_name:
+    type: string
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    weight: 105
     region: content
   field_email_address:
     type: basic_string

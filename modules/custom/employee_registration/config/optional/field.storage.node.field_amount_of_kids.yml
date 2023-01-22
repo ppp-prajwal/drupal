@@ -4,6 +4,8 @@ status: true
 dependencies:
   module:
     - node
+_core:
+  default_config_hash: Y9E0h-ZiisfL9Q9el5_HgxUvYRBzyLPQKNvx1x-T-o4
 id: node.field_amount_of_kids
 field_name: field_amount_of_kids
 entity_type: node
