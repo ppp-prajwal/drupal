@@ -8,10 +8,73 @@ namespace Drupal\employee_registration\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Drupal\Core\Routing\RouteMatchInterface;
-use Drupal\Core\Database\Database;
+use Drupal\Core\Routing\CurrentRouteMatch;
+use Drupal\Core\Database\Connection;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Drupal\Core\Messenger\MessengerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
 
 class RegistrationForm extends FormBase {
+
+  /**
+   * The current route match.
+   *
+   * @var \Drupal\Core\Routing\CurrentRouteMatch
+   */
+  protected $currentRouteMatch;
+
+  /**
+   * The database connection.
+   *
+   * @var \Drupal\Core\Database\Connection
+   */
+  protected $database;
+
+  /**
+   * Instance of Entity Type Manager.
+   *
+   * @var \Drupal\Core\Entity\EntityTypeManagerInterface
+   */
+  protected $entityTypeManager;
+
+  /**
+   * The Messenger service.
+   *
+   * @var \Drupal\Core\Messenger\MessengerInterface
+   */
+  protected $messenger;
+
+  /**
+   * Constructs a new MyController object.
+   *
+   * @param \Drupal\Core\Routing\CurrentRouteMatch $currentRouteMatch
+   *   The current route match.
+   * @param \Drupal\Core\Database\Connection $database
+   *  The database connection.
+   * @param \Drupal\Core\Entity\EntityTypeManagerInterface $entity_type_manager
+   *   The Entity Type Manager.
+   * @param \Drupal\Core\Messenger\MessengerInterface $messenger
+   *   The messenger service.
+   */
+  public function __construct(CurrentRouteMatch $currentRouteMatch, Connection $database, EntityTypeManagerInterface $entity_type_manager, MessengerInterface $messenger) {
+    $this->currentRouteMatch = $currentRouteMatch;
+    $this->database = $database;
+    $this->entityTypeManager = $entity_type_manager;
+    $this->messenger = $messenger;
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('current_route_match'),
+      $container->get('database'),
+      $container->get('entity_type.manager'),
+      $container->get('messenger')
+    );
+  }
+
   /**
    * {@inheritdoc}
    */
@@ -58,9 +121,8 @@ class RegistrationForm extends FormBase {
       '#button_type' => 'primary',
     );
 
-    $department = \Drupal::routeMatch()->getParameter('department');
-    $conn = Database::getConnection();
-    $result = $conn->select('department','d')->fields('d',['department_name','department_code_name'])->execute()->fetchAll(\PDO::FETCH_OBJ);
+    $department = $this->currentRouteMatch->getParameter('department');
+    $result = $this->database->select('department','d')->fields('d',['department_name','department_code_name'])->execute()->fetchAll(\PDO::FETCH_OBJ);
     foreach($result as $row) {
       if ($department == $row->department_code_name){
         $department_check = 'TRUE';
@@ -89,8 +151,8 @@ class RegistrationForm extends FormBase {
     else $one_plus = 0;
     $total_people = $amount_of_kids + $one_plus + 1;
 
-    $nids = \Drupal::entityQuery('node')->accessCheck(FALSE)->condition('status',1)->condition('type','registration')->execute();
-    $nodes = \Drupal\node\Entity\Node::loadMultiple($nids);
+    $nids = $this->entityTypeManager->getStorage('node')->getQuery()->accessCheck(FALSE)->condition('status',1)->condition('type','registration')->execute();
+    $nodes = $this->entityTypeManager->getStorage('node')->loadMultiple($nids);
     foreach($nodes as $node) {
       if($form_state->getValue('email_address') == $node->field_email_address->value) {
         $duplicate_email_check = 'TRUE';
@@ -122,9 +184,8 @@ class RegistrationForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $department = \Drupal::routeMatch()->getParameter('department');
-    $conn = Database::getConnection();
-    $result = $conn->select('department','d')->fields('d',['department_name','department_code_name'])->execute()->fetchAll(\PDO::FETCH_OBJ);
+    $department = $this->currentRouteMatch->getParameter('department');
+    $result = $this->database->select('department','d')->fields('d',['department_name','department_code_name'])->execute()->fetchAll(\PDO::FETCH_OBJ);
     foreach($result as $row) {
       if ($department == $row->department_code_name){
         $department_name = $row->department_name;
@@ -144,6 +205,6 @@ class RegistrationForm extends FormBase {
     $node->field_department_name = $department_name;
     $node->save();
 
-    \Drupal::messenger()->addStatus(t('Employee details registered successfully for an event.'));
+    $this->messenger->addStatus(t('Employee details registered successfully for an event.'));
   }
 }

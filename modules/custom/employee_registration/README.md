@@ -88,6 +88,7 @@ information, see
 
 ## Enhancements
 
+- Use dependency injection in a module.
 
 ## Maintainers
 
