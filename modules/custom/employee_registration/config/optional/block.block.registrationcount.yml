@@ -6,6 +6,8 @@ dependencies:
     - employee_registration
   theme:
     - olivero
+_core:
+  default_config_hash: dth4TeQzC418YyhXlLBAxjnPVbaMYs9N4sJofAAQe4Y
 id: registrationcount
 theme: olivero
 region: content

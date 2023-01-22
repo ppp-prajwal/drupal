@@ -1,13 +1,11 @@
-uuid: 09ce43c2-21b0-47b6-bc88-392fccc1355a
+uuid: b3b6bc98-5f7b-4959-b0fb-73383f77b923
 langcode: en
 status: true
 dependencies:
   module:
     - node
-_core:
-  default_config_hash: NAUzakidMl3fsvD2mlVzdfS2KPQBGjTHtCUjAhmQOHc
-id: node.field_one_plus
-field_name: field_one_plus
+id: node.field_department_name
+field_name: field_department_name
 entity_type: node
 type: string
 settings:
