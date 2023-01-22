@@ -76,6 +76,8 @@ information, see
 - Create a config form \Drupal\employee_registration\src\Form\AddDepartmentConfigForm.php.
 - Create hook_schema() \Drupal\employee_registration\employee_registration.install
 - Create route to AddDepartmentConfigForm \Drupal\employee_registration\employee_registration.routing.yml
+- Add varaiable department to \Drupal\employee_registration\employee_registration.routing.yml
+- Check valid department name and display form \Drupal\employee_registration\src\Form\RegistrationForm.php
 
 
 ## Bugfixes
