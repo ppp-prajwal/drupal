@@ -5,3 +5,11 @@ employee_registration.registration:
     _form: '\Drupal\employee_registration\Form\RegistrationForm'
   requirements:
     _permission: 'access content'
+
+employee_registration.department:
+  path: '/admin/config/add-department'
+  defaults:
+    _title: 'Add Department Form'
+    _form: '\Drupal\employee_registration\Form\AddDepartmentConfigForm'
+  requirements:
+    _permission: 'administer site configuration'
