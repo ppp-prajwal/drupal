@@ -1,0 +1,4 @@
+time_date.timedate:
+  css:
+    theme:
+      css/time-date.css: {}
