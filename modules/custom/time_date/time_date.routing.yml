@@ -1,0 +1,7 @@
+time_date.settings:
+  path: '/admin/config/content/timedate'
+  defaults:
+    _title: 'Timedate Settings'
+    _form: 'Drupal\time_date\Form\TimeDateSettingsForm'
+  requirements:
+    _permission: 'administer site configuration'
