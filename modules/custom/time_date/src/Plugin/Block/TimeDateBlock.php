@@ -49,10 +49,16 @@ class TimeDateBlock extends BlockBase implements ContainerFactoryPluginInterface
     ];
 
     $build[] = [
+      '#theme'=>'time_date',
       '#items'=>$data,
       '#cache'=>[
         'max-age'=>0
       ],
+      '#attached'=>[
+        'library'=>[
+          'time_date/time_date.timedate'
+        ]
+      ]
     ];
 
     return $build;
