@@ -1,0 +1,4 @@
+services:
+  time_date.get_timedate:
+    class: Drupal\time_date\Services\TimeDateServices
+    arguments: ['@config.factory']
