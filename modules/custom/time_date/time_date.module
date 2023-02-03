@@ -1,0 +1,28 @@
+<?php
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function time_date_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the events_list module.
+    case 'help.page.events_list':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('A module to show site location and the current time for the location.') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+function time_date_theme() {
+  return [
+    'time_date'=>[
+      'variables'=>[
+        'items'=>[],
+      ],
+    ],
+  ];
+}
