@@ -1,0 +1,16 @@
+.time-date .time {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.time-date .date-location {
+  font-size: 16px
+}
+
+.time-date .date-location .date {
+  margin-bottom: 0;
+}
+
+.time-date .date-location .location {
+  margin-top: 0;
+}
